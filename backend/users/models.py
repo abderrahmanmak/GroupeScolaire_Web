@@ -9,3 +9,6 @@ class CustomUser(AbstractUser):
         ('Student', 'Student'),
     ]
     role = models.CharField(max_length=20, choices=ROLE_CHOICES, default='Student')
+
+    class Meta:
+        app_label = 'users'

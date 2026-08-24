@@ -13,6 +13,9 @@ class Cycle(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        app_label = 'academics'
+
 class Branch(models.Model):
     name = models.CharField(max_length=100)
     cycle = models.ForeignKey(Cycle, on_delete=models.CASCADE, related_name='branches')
@@ -20,3 +23,6 @@ class Branch(models.Model):
 
     def __str__(self):
         return f"{self.name} ({self.cycle.name})"
+
+    class Meta:
+        app_label = 'academics'

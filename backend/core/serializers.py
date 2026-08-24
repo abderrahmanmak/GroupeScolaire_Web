@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from academics.models import Cycle, Branch
+from backend.academics.models import Cycle, Branch
 
 class CycleSerializer(serializers.ModelSerializer):
     class Meta:
