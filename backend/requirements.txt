@@ -4,3 +4,4 @@ celery
 psycopg2-binary
 django-storages
 redis
+django-environ
