@@ -1,70 +1,136 @@
 import React from 'react';
 
-const cyclesHero = "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1200&h=800&fit=crop";
+const maternelleImg = "/lescretespicsvids/sections/primaire/primaire.jpg";
+const primaireImg = "/lescretespicsvids/sections/maternelle/maternelle.jpg";
+const collegeImg = "/lescretespicsvids/sections/college/college.jpg";
+const lyceeImg = "/lescretespicsvids/sections/lycee/lycee.jpg";
 
 function Cycles() {
   return (
     <div className="min-h-screen bg-white">
-      <section className="relative mx-auto max-w-7xl px-6 pt-12 pb-24">
-        <div className="grid grid-cols-12 items-end gap-8">
-          <div className="col-span-12 animate-reveal">
-             <div className="relative overflow-hidden rounded-[2rem] shadow-2xl ring-1 ring-black/5 mb-16">
-              <img src={cyclesHero} alt="Nos cycles" className="w-full h-[300px] md:h-[400px] object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 via-blue-900/20 to-transparent" />
-              <div className="absolute bottom-0 left-0 w-full p-8 md:p-12 lg:p-16">
-                <h1 className="font-display text-4xl md:text-5xl lg:text-7xl font-extrabold text-white text-balance tracking-tighter leading-[0.9]">
-                  Nos <span className="font-serif font-normal italic">Cycles</span>
-                </h1>
+      {/* Hero Section */}
+      <header className="relative w-full h-[60vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 bg-black/50 z-10"></div>
+        <img src="/lescretespicsvids/sections/maternelle/cycles.jpg" className="absolute inset-0 w-full h-full object-cover" alt="Élèves" />
+        
+        <div className="relative z-20 text-center px-[4vw]">
+            <h1 className="font-sans font-bold text-5xl md:text-7xl text-white tracking-tight mb-4">
+                Nos Cycles d'Enseignement
+            </h1>
+            <p className="font-serif text-xl md:text-2xl text-gray-200 font-medium">
+                Un parcours éducatif complet et cohérent, de la maternelle au lycée.
+            </p>
+        </div>
+      </header>
+
+      {/* Liste des cycles (Z-pattern) */}
+      <div className="py-24 px-[4vw] max-w-[1600px] mx-auto flex flex-col gap-24">
+          
+          {/* Maternelle */}
+          <div className="flex flex-col md:flex-row items-stretch gap-12">
+              <div className="w-full md:w-1/2 flex">
+                  <img src={maternelleImg} className="w-full h-full min-h-[400px] object-cover rounded-3xl" alt="Maternelle" />
               </div>
-            </div>
+              <div className="w-full md:w-1/2 flex">
+                  <div className="bg-white p-10 md:p-14 rounded-3xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] w-full flex flex-col justify-center">
+                      <h2 className="font-sans text-4xl font-bold text-gray-900 mb-6">Maternelle</h2>
+                      <ul className="space-y-6">
+                          <li className="flex items-start gap-4">
+                              <span className="text-[#199347] text-2xl font-bold leading-none mt-1">✓</span>
+                              <span className="font-serif text-xl text-gray-700 leading-relaxed">Développement linguistique (Arabe/Français)</span>
+                          </li>
+                          <li className="flex items-start gap-4">
+                              <span className="text-[#199347] text-2xl font-bold leading-none mt-1">✓</span>
+                              <span className="font-serif text-xl text-gray-700 leading-relaxed">Activités de pré-lecture et pré-écriture</span>
+                          </li>
+                          <li className="flex items-start gap-4">
+                              <span className="text-[#199347] text-2xl font-bold leading-none mt-1">✓</span>
+                              <span className="font-serif text-xl text-gray-700 leading-relaxed">Éveil artistique et motricité</span>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
           </div>
-        </div>
 
-        <div className="max-w-4xl mx-auto text-center mb-20 animate-reveal-delay-1">
-          <p className="text-2xl md:text-3xl text-gray-800 leading-relaxed font-serif italic">
-            Au Groupe Scolaire Les Crêtes, nous offrons un parcours éducatif complet et cohérent de la maternelle au lycée.
-          </p>
-        </div>
+          {/* Primaire (inversé) */}
+          <div className="flex flex-col md:flex-row-reverse items-stretch gap-12">
+              <div className="w-full md:w-1/2 flex">
+                  <img src={primaireImg} className="w-full h-full min-h-[400px] object-cover rounded-3xl" alt="Primaire" />
+              </div>
+              <div className="w-full md:w-1/2 flex">
+                  <div className="bg-white p-10 md:p-14 rounded-3xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] w-full flex flex-col justify-center">
+                      <h2 className="font-sans text-4xl font-bold text-gray-900 mb-6">Primaire</h2>
+                      <ul className="space-y-6">
+                          <li className="flex items-start gap-4">
+                              <span className="text-[#199347] text-2xl font-bold leading-none mt-1">✓</span>
+                              <span className="font-serif text-xl text-gray-700 leading-relaxed">Enseignement trilingue (Arabe, Français, Anglais)</span>
+                          </li>
+                          <li className="flex items-start gap-4">
+                              <span className="text-[#199347] text-2xl font-bold leading-none mt-1">✓</span>
+                              <span className="font-serif text-xl text-gray-700 leading-relaxed">Initiation aux sciences, technologie et IA</span>
+                          </li>
+                          <li className="flex items-start gap-4">
+                              <span className="text-[#199347] text-2xl font-bold leading-none mt-1">✓</span>
+                              <span className="font-serif text-xl text-gray-700 leading-relaxed">Éducation sportive et musicale</span>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 animate-reveal-delay-1">
-          <CycleDetailCard
-            title="Maternelle"
-            age="3-5 ans"
-            description="Arabe/Français, pré-lecture, socio-émotionnel."
-          />
-          <CycleDetailCard
-            title="Primaire"
-            age="6-11 ans"
-            description="Trilingue, STEM, Initiation IA (Gemini, Canva, Google)."
-          />
-          <CycleDetailCard
-            title="Collège"
-            age="12-14 ans"
-            description="Autonomie, enseignement approfondi, examens nationaux."
-          />
-          <CycleDetailCard
-            title="Lycée"
-            age="15-17 ans"
-            description="Options (Sc. Maths, Sc. Physiques, SVT, Lettres), préparation post-bac."
-          />
-        </div>
-      </section>
-    </div>
-  );
-}
+          {/* Collège */}
+          <div className="flex flex-col md:flex-row items-stretch gap-12">
+              <div className="w-full md:w-1/2 flex">
+                  <img src={collegeImg} className="w-full h-full min-h-[400px] object-cover rounded-3xl" alt="Collège" />
+              </div>
+              <div className="w-full md:w-1/2 flex">
+                  <div className="bg-white p-10 md:p-14 rounded-3xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] w-full flex flex-col justify-center">
+                      <h2 className="font-sans text-4xl font-bold text-gray-900 mb-6">Collège</h2>
+                      <ul className="space-y-6">
+                          <li className="flex items-start gap-4">
+                              <span className="text-[#199347] text-2xl font-bold leading-none mt-1">✓</span>
+                              <span className="font-serif text-xl text-gray-700 leading-relaxed">Renforcement trilingue approfondi</span>
+                          </li>
+                          <li className="flex items-start gap-4">
+                              <span className="text-[#199347] text-2xl font-bold leading-none mt-1">✓</span>
+                              <span className="font-serif text-xl text-gray-700 leading-relaxed">Mathématiques et sciences expérimentales</span>
+                          </li>
+                          <li className="flex items-start gap-4">
+                              <span className="text-[#199347] text-2xl font-bold leading-none mt-1">✓</span>
+                              <span className="font-serif text-xl text-gray-700 leading-relaxed">Histoire-géographie, civisme et technologie</span>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
 
-function CycleDetailCard({ title, age, description }) {
-  return (
-    <div className="group rounded-[2rem] border border-gray-200 bg-white text-gray-900 p-8 md:p-10 transition-all hover:-translate-y-1 hover:shadow-xl hover:bg-blue-600 hover:text-white hover:border-blue-600 flex flex-col">
-      <div className="flex justify-between items-start mb-8">
-        <span className="inline-block px-4 py-1.5 rounded-full text-sm font-bold bg-gray-100 text-gray-800 group-hover:bg-blue-500/30 group-hover:text-white transition-colors">
-          {age}
-        </span>
+          {/* Lycée (inversé) */}
+          <div className="flex flex-col md:flex-row-reverse items-stretch gap-12">
+              <div className="w-full md:w-1/2 flex">
+                  <img src={lyceeImg} className="w-full h-full min-h-[400px] object-cover rounded-3xl" alt="Lycée" />
+              </div>
+              <div className="w-full md:w-1/2 flex">
+                  <div className="bg-white p-10 md:p-14 rounded-3xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] w-full flex flex-col justify-center">
+                      <h2 className="font-sans text-4xl font-bold text-gray-900 mb-6">Lycée</h2>
+                      <ul className="space-y-6">
+                          <li className="flex items-start gap-4">
+                              <span className="text-[#199347] text-2xl font-bold leading-none mt-1">✓</span>
+                              <span className="font-serif text-xl text-gray-700 leading-relaxed">3 filières : Sc. Maths, Sc. Physiques, SVT</span>
+                          </li>
+                          <li className="flex items-start gap-4">
+                              <span className="text-[#199347] text-2xl font-bold leading-none mt-1">✓</span>
+                              <span className="font-serif text-xl text-gray-700 leading-relaxed">Préparation intensive aux concours supérieurs</span>
+                          </li>
+                          <li className="flex items-start gap-4">
+                              <span className="text-[#199347] text-2xl font-bold leading-none mt-1">✓</span>
+                              <span className="font-serif text-xl text-gray-700 leading-relaxed">Orientation académique personnalisée</span>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+
       </div>
-      <h3 className="mb-4 font-display text-4xl font-bold">{title}</h3>
-      <p className="text-xl leading-relaxed text-gray-600 group-hover:text-blue-50 transition-colors">
-        {description}
-      </p>
     </div>
   );
 }

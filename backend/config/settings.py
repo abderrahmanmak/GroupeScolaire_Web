@@ -42,10 +42,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'backend.core',
-    'backend.users',
-    'backend.academics',
-    'backend.transport',
+    'core',
+    'users',
+    'academics',
+    'transport',
 
 ]
 
@@ -141,3 +141,4 @@ MAILERS = {
 }
 
 AUTH_USER_MODEL = 'users.CustomUser'
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

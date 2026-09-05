@@ -6,11 +6,25 @@ export default {
   ],
   theme: {
     extend: {
+      colors: {
+        'brand-green': '#199347',
+        'light-purple': '#dab1da',
+        'crimson': '#B30000',
+      },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        display: ['Inter Tight', 'sans-serif'],
-        serif: ['Lora', 'serif'],
+        sans: ['"Graphik Web"', 'sans-serif'],
+        serif: ['"Lyon Display"', 'serif'],
+        display: ['"Graphik Web"', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
+      },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
+        }
+      },
+      animation: {
+        marquee: 'marquee 30s linear infinite',
       },
     },
   },

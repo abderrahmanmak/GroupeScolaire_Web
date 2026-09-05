@@ -19,7 +19,7 @@ services:
 
   backend:
     build: ./backend
-    command: python manage.py runserver 0.0.0.0:8000
+    command: gunicorn --bind 0.0.0.0:8000 --reload config.wsgi:application
     volumes:
       - ./backend:/app
     ports:
@@ -28,10 +28,10 @@ services:
       - db
       - redis
     environment:
-      - POSTGRES_DB=lescretes
-      - POSTGRES_USER=user
-      - POSTGRES_PASSWORD=password
-      - POSTGRES_HOST=db
+      - DB_NAME=lescretes
+      - DB_USER=user
+      - DB_PASSWORD=password
+      - DB_HOST=db
       - REDIS_URL=redis://redis:6379/0
 
 volumes:
